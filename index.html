@@ -11,6 +11,7 @@
 
 <body>
     <button id="btn">擦除</button>
+    <input type="color" id="btn1"></input>
     <canvas id="canvas">
     </canvas>
 
@@ -20,8 +21,8 @@
         canvas.width = document.documentElement.clientWidth - 10;
         canvas.height = document.documentElement.clientHeight;
         let ctx = canvas.getContext("2d");
-        ctx.fillStyle = "red";
-        ctx.strokeStyle = "none";
+        ctx.fillStyle = "black";
+        ctx.strokeStyle = "black";
         ctx.lineWidth = 8;
         ctx.lineCap = "round"
 
@@ -73,12 +74,16 @@
         }
 
         const btn = document.querySelector("#btn");
+        const btn1 = document.querySelector("#btn1");
         btn.addEventListener('click', () => {
             console.log(1);
-            ctx.fillStyle = '#fff'
+            ctx.strokeStyle = '#fff'
             console.log(ctx.fillStyle);
         })
+        btn1.onchange = function () {
+            ctx.strokeStyle = this.value
 
+        }
 
 
     </script>
