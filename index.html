@@ -10,15 +10,17 @@
 </head>
 
 <body>
-    <canvas id="canvas"></canvas>
+    <button id="btn">擦除</button>
+    <canvas id="canvas">
+    </canvas>
 
     <script>
         //画线
         let canvas = document.getElementById("canvas");
-        canvas.width = document.documentElement.clientWidth;
+        canvas.width = document.documentElement.clientWidth - 10;
         canvas.height = document.documentElement.clientHeight;
         let ctx = canvas.getContext("2d");
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "red";
         ctx.strokeStyle = "none";
         ctx.lineWidth = 8;
         ctx.lineCap = "round"
@@ -70,7 +72,12 @@
             }
         }
 
-
+        const btn = document.querySelector("#btn");
+        btn.addEventListener('click', () => {
+            console.log(1);
+            ctx.fillStyle = '#fff'
+            console.log(ctx.fillStyle);
+        })
 
 
 
