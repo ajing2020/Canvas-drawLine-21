@@ -12,6 +12,7 @@
 <body>
     <button id="btn">擦除</button>
     <input type="color" id="btn1"></input>
+    <input type="range" id='range'>
     <canvas id="canvas">
     </canvas>
 
@@ -23,7 +24,7 @@
         let ctx = canvas.getContext("2d");
         ctx.fillStyle = "black";
         ctx.strokeStyle = "black";
-        ctx.lineWidth = 8;
+        ctx.lineWidth = 20;
         ctx.lineCap = "round"
 
         function drawLine(x1, y1, x2, y2) {
@@ -73,8 +74,10 @@
             }
         }
 
+        //控制功能
         const btn = document.querySelector("#btn");
         const btn1 = document.querySelector("#btn1");
+        const range = document.querySelector("#range");
         btn.addEventListener('click', () => {
             console.log(1);
             ctx.strokeStyle = '#fff'
@@ -83,6 +86,9 @@
         btn1.onchange = function () {
             ctx.strokeStyle = this.value
 
+        }
+        range.onchange = function(){
+            ctx.lineWidth = this.value;
         }
 
 
